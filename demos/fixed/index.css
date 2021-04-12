@@ -7,12 +7,16 @@ h1 {
     font-size: 140%;
 }
 header{
-    background-color:rgb(36, 153, 231);
+    background-color:#dd0039
+    ;
 }
 .cabecera{
     display: flex;
 }
 .item{
     margin-left: 13%;
+}
+#blocklyDiv blocklyNonSelectable{
+    background-color: #ff0039;
 }
 
