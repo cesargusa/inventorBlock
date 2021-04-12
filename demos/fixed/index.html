@@ -9,9 +9,14 @@
   <link rel="stylesheet" type="text/css" href="../../demos/fixed/index.css" media="screen" />
 </head>
 <body>
-  <h1><a href="https://developers.google.com/blockly/">Blockly</a> &gt;
-    <a href="../index.html">Demos</a> &gt; Fixed Blockly</h1>
-
+  <header>
+    <div class="cabecera">
+    <h1>Academia de inventores</h1>
+    <h1>BlockAcademy</h1>
+    <h4><a href="https://developers.google.com/blockly/">Blockly</a> &gt;
+      <a href="../index.html">Demos</a> &gt; Fixed Blockly</h4>
+    </div>
+  </header>
   <p>This is a simple demo of injecting Blockly into a fixed-sized 'div' element.</p>
 
   <p>&rarr; More info on <a href="https://developers.google.com/blockly/guides/configure-blockly/web/fixed-size">injecting fixed-sized Blockly</a>&hellip;</p>
@@ -30,6 +35,7 @@
     <block type="text_print"></block>
   </xml>
 
+  <script src="../../msg/js/es.js"></script>
   <script>
     var demoWorkspace = Blockly.inject('blocklyDiv',
         {media: '../../media/',
