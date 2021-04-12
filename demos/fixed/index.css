@@ -7,8 +7,12 @@ h1 {
     font-size: 140%;
 }
 header{
-    background-color: crimson;
+    background-color:rgb(36, 153, 231);
 }
 .cabecera{
     display: flex;
 }
+.item{
+    margin-left: 13%;
+}
+

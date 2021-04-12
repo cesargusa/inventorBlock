@@ -11,29 +11,46 @@
 <body>
   <header>
     <div class="cabecera">
-    <h1>Academia de inventores</h1>
-    <h1>BlockAcademy</h1>
-    <h4><a href="https://developers.google.com/blockly/">Blockly</a> &gt;
-      <a href="../index.html">Demos</a> &gt; Fixed Blockly</h4>
+    <div class="item"><h1>Academia de inventores</h1></div>
+    <div class="item"><h1>BlockAcademy</h1></div>
+    <div class="item"><h4><a href="https://developers.google.com/blockly/">Blockly</a> &gt;<a href="../index.html">Demos</a> &gt; Fixed Blockly</h4></div>
     </div>
   </header>
   <p>This is a simple demo of injecting Blockly into a fixed-sized 'div' element.</p>
 
   <p>&rarr; More info on <a href="https://developers.google.com/blockly/guides/configure-blockly/web/fixed-size">injecting fixed-sized Blockly</a>&hellip;</p>
 
-  <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
+  <ul class="nav"></ul>
+  <div id="blocklyDiv" style="height: 480px; width: 600px;">
+      <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+      <category name="Logica" colour="210">
+      <block type="controls_if"></block>
+      <block type="logic_compare"></block>
+      </category>
 
-  <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-    <block type="controls_if"></block>
-    <block type="logic_compare"></block>
-    <block type="controls_repeat_ext"></block>
-    <block type="math_number">
-      <field name="NUM">123</field>
-    </block>
-    <block type="math_arithmetic"></block>
-    <block type="text"></block>
-    <block type="text_print"></block>
-  </xml>
+      <category name="Control" colour="120">
+      <block type="controls_repeat_ext"></block>
+      </category>
+
+      <category name="Matematicas" colour="230">
+      <block type="math_number">
+        <field name="NUM">123</field>
+      </block>
+      <block type="math_arithmetic"></block>
+      </category>
+
+      <category name="Texto" colour="150">
+      <block type="text"></block>
+      <block type="text_print"></block>
+      </category>
+      
+      </xml>
+    </div>
+  </ul>
+
+
+
+
 
   <script src="../../msg/js/es.js"></script>
   <script>
