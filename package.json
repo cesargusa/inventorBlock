@@ -92,6 +92,7 @@
     "yargs": "^16.0.3"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
     "jsdom": "16.5.0"
   }
 }
