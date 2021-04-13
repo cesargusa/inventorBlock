@@ -13,18 +13,35 @@ header{
 .cabecera{
     display: flex;
 }
-.item{
-    margin-left: 13%;
-    margin-top: 10%;
+.logo{
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+
 }
-.title{
-    margin-top: 17%;
+.items{
+    width: 100%;
+    margin-left: 8%;
+    margin-top: 3%;
+    display: flex;
+}
+.item{
+    margin-left: 26%;
+   
+}
+.button1{
+    margin-left:2%;
+    background-color: gray;
+    color: #fff;
+}
+.button2{
+    margin-left:22.6%;
+    background-color:#dd0039;
+    color: #fff;
 }
 #blocklyDiv blocklyNonSelectable{
     background-color: #ff0039;
 }
-#languageMenu{
-    margin-top: 20%;
-}
+
 
 
