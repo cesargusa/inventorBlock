@@ -7,8 +7,12 @@ h1 {
     font-size: 140%;
 }
 header{
-    background-color:#dd0039
+    background-color:#EC142A;
     ;
+}
+p{
+    margin-left: 1%;
+    margin-top: 5%;
 }
 .cabecera{
     display: flex;
@@ -26,7 +30,7 @@ header{
     display: flex;
 }
 .item{
-    margin-left: 26%;
+    margin-left: 11%;
    
 }
 .button1{
@@ -39,8 +43,15 @@ header{
     background-color:#dd0039;
     color: #fff;
 }
-#blocklyDiv blocklyNonSelectable{
+#blocklyDiv {
     background-color: #ff0039;
+    margin-left: 3%;
+}
+.blocklyWorkspace{
+    margin-left: 3%;
+}
+.playarea{
+    display: flex;
 }
 
 

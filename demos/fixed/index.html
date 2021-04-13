@@ -17,7 +17,7 @@
     <div class="cabecera">
     <div class="logo"><a href="https://academiadeinventores.com/"><img src="https://academiadeinventores.com/wp-content/uploads/2020/06/logotipo_academia_blanco.svg" width="280px" alt="Academia de inventores"></div>
       <div class="items">
-        <div class="item"><img src="../fixed/logoBA.JPG" width="280px" alt="Academia de inventores"></div>
+        <div class="item"><img src="../fixed/Logo2.JPG" width="356px"></div>
         <div class="item"><h4><a href="https://developers.google.com/blockly/">Blockly</a> &gt;<a href="../index.html">Demos</a> &gt; Fixed Blockly</h4></div>
       </div>
     </div>
@@ -30,8 +30,7 @@
     <button class="button1" onclick="showCode()">Mostrar JavaScript</button>
     <button class="button2" onclick="runCode()">Iniciar JavaScript</button>
   </p>
-
-  <ul class="nav"></ul>
+  <div class="playarea">
     <div id="blocklyDiv" style="height: 480px; width: 600px;">
       <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
         <!-- Logica -->
@@ -129,15 +128,27 @@
           <block type="text"></block>
           <block type="text_print"></block>
         </category>
+
+        <!-- Variables y funciones -->
+        <sep></sep>
+        <category name="Variables" custom="VARIABLE" colour="%{BKY_VARIABLES_HUE}">
+        </category>
+        <category name="Functions" custom="PROCEDURE" colour="%{BKY_PROCEDURES_HUE}">
+        </category>
       </xml>
     </div>
-  </ul>
-    
+    <textarea id="output" disabled="disabled" style="display: inline-block; height: 480px; width: 38%;">Output</textarea>
+  </div>
+
   <script src="../../msg/js/es.js"></script>
   <script>
     var demoWorkspace = Blockly.inject('blocklyDiv',
         {media: '../../media/',
          toolbox: document.getElementById('toolbox')});
+    var outputArea = document.getElementById('output');
+    var runButton = document.getElementsByClassName('button2');
+    var myInterpreter = null;
+    var runner;
 
     function showCode() {
       // Generate JavaScript code and display it.
@@ -159,6 +170,120 @@
         alert(e);
       }
     }
+  </script>
+
+  <script>
+    function initApi(interpreter, globalObject) {
+      // Add an API function for the alert() block, generated for "text_print" blocks.
+      var wrapper = function(text) {
+        text = text ? text.toString() : '';
+        outputArea.value = outputArea.value + '\n' + text;
+      };
+      interpreter.setProperty(globalObject, 'alert',
+          interpreter.createNativeFunction(wrapper));
+
+      // Add an API function for the prompt() block.
+      var wrapper = function(text) {
+        text = text ? text.toString() : '';
+        return interpreter.createPrimitive(prompt(text));
+      };
+      interpreter.setProperty(globalObject, 'prompt',
+          interpreter.createNativeFunction(wrapper));
+
+      // Add an API for the wait block.  See wait_block.js
+      initInterpreterWaitForSeconds(interpreter, globalObject);
+
+      // Add an API function for highlighting blocks.
+      var wrapper = function(id) {
+        id = id ? id.toString() : '';
+        return interpreter.createPrimitive(highlightBlock(id));
+      };
+      interpreter.setProperty(globalObject, 'highlightBlock',
+          interpreter.createNativeFunction(wrapper));
+    }
+
+    var highlightPause = false;
+    var latestCode = '';
+
+    function highlightBlock(id) {
+      demoWorkspace.highlightBlock(id);
+      highlightPause = true;
+    }
+
+    function resetStepUi(clearOutput) {
+      demoWorkspace.highlightBlock(null);
+      highlightPause = false;
+      runButton.disabled = '';
+
+      if (clearOutput) {
+        outputArea.value = 'Program output:\n=================';
+      }
+    }
+
+    function generateCodeAndLoadIntoInterpreter() {
+      // Generate JavaScript code and parse it.
+      Blockly.JavaScript.STATEMENT_PREFIX = 'highlightBlock(%1);\n';
+      Blockly.JavaScript.addReservedWords('highlightBlock');
+      latestCode = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+
+      resetStepUi(true);
+    }
+
+    function resetInterpreter() {
+      myInterpreter = null;
+      if (runner) {
+        clearTimeout(runner);
+        runner = null;
+      }
+    }
+
+    function runCode() {
+      if (!myInterpreter) {
+        // First statement of this code.
+        // Clear the program output.
+        resetStepUi(true);
+        runButton.disabled = 'disabled';
+
+        // And then show generated code in an alert.
+        // In a timeout to allow the outputArea.value to reset first.
+        setTimeout(function() {
+          alert('Ready to execute the following code\n' +
+            '===================================\n' +
+            latestCode);
+
+          // Begin execution
+          highlightPause = false;
+          myInterpreter = new Interpreter(latestCode, initApi);
+          runner = function() {
+            if (myInterpreter) {
+              var hasMore = myInterpreter.run();
+              if (hasMore) {
+                // Execution is currently blocked by some async call.
+                // Try again later.
+                setTimeout(runner, 10);
+              } else {
+                // Program is complete.
+                outputArea.value += '\n\n<< Program complete >>';
+                resetInterpreter();
+                resetStepUi(false);
+              }
+            }
+          };
+          runner();
+        }, 1);
+        return;
+      }
+    }
+
+    // Load the interpreter now, and upon future changes.
+    generateCodeAndLoadIntoInterpreter();
+    demoWorkspace.addChangeListener(function(event) {
+      if (!(event instanceof Blockly.Events.Ui)) {
+        // Something changed. Parser needs to be reloaded.
+        resetInterpreter();
+        generateCodeAndLoadIntoInterpreter();
+      }
+    });
   </script>
 
 </body>
