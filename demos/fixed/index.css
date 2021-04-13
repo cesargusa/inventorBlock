@@ -15,8 +15,16 @@ header{
 }
 .item{
     margin-left: 13%;
+    margin-top: 10%;
+}
+.title{
+    margin-top: 17%;
 }
 #blocklyDiv blocklyNonSelectable{
     background-color: #ff0039;
 }
+#languageMenu{
+    margin-top: 20%;
+}
+
 
