@@ -6,12 +6,49 @@
   <title>Blockly Demo: Fixed Blockly</title>
   <script src="../../blockly_compressed.js"></script>
   <script src="../../blocks_compressed.js"></script>
-  <script type="text/javascript" src="../../arduino_compressed.js"></script>
   <script src="../../javascript_compressed.js"></script>
   <script src="../../msg/js/en.js"></script>
   <script src="../fixed/js/wait_block.js"></script>
   <script src="acorn_interpreter.js"></script>
-  
+
+   <!-- needed for type of variable -->
+   <script type="text/javascript" src="../../core/Ardublockly/type.js"></script>
+   <script type="text/javascript" src="../../core/Ardublockly/types.js"></script>
+   <script type="text/javascript" src="../../core/Ardublockly/static_typing.js"></script>
+   <script type="text/javascript" src="../../core/Ardublockly/instances.js"></script>
+   <script type="text/javascript" src="../../core/Ardublockly/field_instance.js"></script>
+   <script type="text/javascript" src="../../core/Ardublockly/block_instance.js"></script>
+
+  <!--Arduino generator, must be defined NOW-->
+  <script type="text/javascript" src="../../generators/generator_arduino.js"></script>
+  <script type="text/javascript" src="../../generators/generator_python.js"></script>
+
+  <script type="text/javascript" src="../../core/BlocklyArduino/blockly@rduino_core_web.js"></script>
+  <script type="text/javascript" src="../../core/BlocklyArduino/blockly@rduino_boards.js"></script>
+  <script type="text/javascript" src="../../core/BlocklyArduino/blockly@rduino_functions_buttons_web.js"></script>
+  <script type="text/javascript" src="../../core/BlocklyArduino/blockly@rduino_tools.js"></script>
+  <script type="text/javascript" src="../../core/BlocklyArduino/blockly@rduino_visual.js"></script>
+  <script type="text/javascript" src="../../core/BlocklyArduino/blockly@rduino_visual_buttons.js"></script>
+
+  <script type="text/javascript" src="../../core/libs/jquery-2.1.3.min.js"></script>
+  <script type="text/javascript" src="../../core/libs/jquery-ui.js"></script>
+  <script type="text/javascript" src="../../core/libs/bootstrap.min.3.3.6.js"></script>
+  <script type="text/javascript" src="../../core/libs/bootstrap-toggle.min.js"></script>
+  <script type="text/javascript" src="../../core/libs/clipboard.min.js"></script>
+  <script type="text/javascript" src="../../core/libs/head.load.min.js"></script>
+  <script type="text/javascript" src="../../core/libs/html2canvas.min.js"></script>
+  <script type="text/javascript" src="../../core/libs/canvas2image.js"></script>
+  <script type="text/javascript" src="../../core/libs/prettify.min.js"></script>
+  <script type="text/javascript" src="../../core/libs/smoothie.js"></script>
+
+   <!-- define all additional blocks from one resumer-->
+   <script type="text/javascript" src="../../blocks/arduino_resume.js"></script>
+   <script type="text/javascript" src="../../generators/arduino_resume.js"></script>
+
+    <!-- define all python & micro:bit-->
+    <script type="text/javascript" src="../../blocks/microbit/microbit.js"></script>
+    <script type="text/javascript" src="../../generators/python_resume.js"></script>
+
 
   <link rel="stylesheet" type="text/css" href="../../demos/fixed/index.css" media="screen" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" 
@@ -238,12 +275,6 @@
           </block>
         </category>
 
-        <!-- Componentes arduino -->
-        <sep></sep>
-        <category name="Stepper" custom="VARIABLE" colour="%{BKY_VARIABLES_HUE}">
-          
-        </category>
-
         <!-- Ejemplos -->
         <sep></sep>
         <category name="Library" expanded="true">
@@ -445,6 +476,9 @@
             </block>
           </category>
         </category>
+        <category name="Arduino">
+        <div class="blocklyToolboxDiv" dir="LTR" style="left: 0px; height: 263px;"><div class="blocklyTreeRoot" id=":0" role="tree" aria-selected="false" aria-expanded="false" aria-level="0" aria-labelledby=":0.label" hidefocus="true" tabindex="0"><div class="blocklyTreeRow blocklyHidden" style="padding-left:0px;"><span style="display:inline-block;" class="" role="presentation"></span><span class="blocklyTreeLabel" id=":0.label"></span><span></span></div><div style="background-position:-100px 0;" role="group"><div class="" id=":1" role="treeitem" aria-selected="false" aria-expanded="false" aria-level="1" aria-labelledby=":1.label" aria-setsize="7" aria-posinset="1"><div class="blocklyTreeRow" style="padding-left: 0px; border-left: 8px solid rgb(255, 171, 25);"><span role="presentation"></span><span style="display:inline-block;" class="blocklyTreeIcon blocklyTreeIconNone" role="presentation"></span><span class="blocklyTreeLabel" id=":1.label">Logic</span><span></span></div><div style="background-position:0px 0;display:none;" role="group"></div></div><div class="" id=":2" role="treeitem" aria-selected="false" aria-expanded="false" aria-level="1" aria-labelledby=":2.label" aria-setsize="7" aria-posinset="2"><div class="blocklyTreeRow" style="padding-left: 0px; border-left: 8px solid rgb(255, 213, 0);"><span role="presentation"></span><span style="display:inline-block;" class="blocklyTreeIcon blocklyTreeIconNone" role="presentation"></span><span class="blocklyTreeLabel" id=":2.label">Loops</span><span></span></div><div style="background-position:0px 0;display:none;" role="group"></div></div><div class="" id=":3" role="treeitem" aria-selected="false" aria-expanded="false" aria-level="1" aria-labelledby=":3.label" aria-setsize="7" aria-posinset="3"><div class="blocklyTreeRow" style="padding-left: 0px; border-left: 8px solid rgb(64, 191, 74);"><span role="presentation"></span><span style="display:inline-block;" class="blocklyTreeIcon blocklyTreeIconNone" role="presentation"></span><span class="blocklyTreeLabel" id=":3.label">Math</span><span></span></div><div style="background-position:0px 0;display:none;" role="group"></div></div><div class="" id=":4" role="treeitem" aria-selected="false" aria-expanded="false" aria-level="1" aria-labelledby=":4.label" aria-setsize="7" aria-posinset="4"><div class="blocklyTreeRow" style="padding-left: 0px; border-left: 8px solid rgb(76, 191, 230);"><span role="presentation"></span><span style="display:inline-block;" class="blocklyTreeIcon blocklyTreeIconNone" role="presentation"></span><span class="blocklyTreeLabel" id=":4.label">Array</span><span></span></div><div style="background-position:0px 0;display:none;" role="group"></div></div><div class="" id=":5" role="treeitem" aria-selected="false" aria-expanded="false" aria-level="1" aria-labelledby=":5.label" aria-setsize="7" aria-posinset="5"><div class="blocklyTreeRow" style="padding-left: 0px; border-left: 8px solid rgb(153, 102, 255);"><span role="presentation"></span><span style="display:inline-block;" class="blocklyTreeIcon blocklyTreeIconNone" role="presentation"></span><span class="blocklyTreeLabel" id=":5.label">Text</span><span></span></div><div style="background-position:0px 0;display:none;" role="group"></div></div><div class="" id=":6" role="treeitem" aria-selected="false" aria-expanded="false" aria-level="1" aria-labelledby=":6.label" aria-setsize="7" aria-posinset="6"><div class="blocklyTreeRow" style="padding-left: 0px; border-left: 8px solid rgb(255, 140, 26);"><span role="presentation"></span><span style="display:inline-block;" class="blocklyTreeIcon blocklyTreeIconNone" role="presentation"></span><span class="blocklyTreeLabel" id=":6.label">Variables</span><span></span></div><div style="background-position:0px 0;display:none;" role="group"></div></div><div class="" id=":7" role="treeitem" aria-selected="false" aria-expanded="false" aria-level="1" aria-labelledby=":7.label" aria-setsize="7" aria-posinset="7"><div class="blocklyTreeRow" style="padding-left: 0px; border-left: 8px solid rgb(255, 102, 128);"><span role="presentation"></span><span style="display:inline-block;" class="blocklyTreeIcon blocklyTreeIconNone" role="presentation"></span><span class="blocklyTreeLabel" id=":7.label">Functions</span><span></span></div><div style="background-position:-100px 0;display:none;" role="group"></div></div></div></div></div>
+        </category>  
       </xml>
     </div>
     <textarea id="output" disabled="disabled" style="display: inline-block; height: 480px; width: 38%;">Output</textarea>
