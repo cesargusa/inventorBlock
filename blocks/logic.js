@@ -281,8 +281,9 @@ Blockly.Constants.Logic.TOOLTIPS_BY_OP = {
 };
 
 Blockly.Extensions.register('logic_op_tooltip',
-    Blockly.Extensions.buildTooltipForDropdown(
-        'OP', Blockly.Constants.Logic.TOOLTIPS_BY_OP));
+  Blockly.Extensions.buildTooltipForDropdown(
+       'OP', Blockly.Constants.Logic.TOOLTIPS_BY_OP));
+
 
 /**
  * Mutator methods added to controls_if blocks.

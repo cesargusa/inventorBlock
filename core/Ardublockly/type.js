@@ -7,6 +7,7 @@
  * @fileoverview Object that defines Types that can then be converted to
  *     language specific types in each language generator.
  */
+
 'use strict';
 
 goog.provide('Blockly.Type');

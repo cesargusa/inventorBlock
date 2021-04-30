@@ -5,11 +5,13 @@
   
   <title>Blockly Demo: Fixed Blockly</title>
   <script src="../../blockly_compressed.js"></script>
-  <script src="../../blocks_compressed.js"></script>
-  <script src="../../javascript_compressed.js"></script>
+  <script src="../../blockly_compressed2.js"></script>
+  <!-- <script src="../../blocks_compressed.js"></script> -->
+  <!-- <script src="../../javascript_compressed.js"></script> -->
   <script src="../../msg/js/en.js"></script>
   <script src="../fixed/js/wait_block.js"></script>
   <script src="acorn_interpreter.js"></script>
+
 
    <!-- needed for type of variable -->
    <script type="text/javascript" src="../../core/Ardublockly/type.js"></script>
@@ -80,7 +82,7 @@
   <div class="playarea">
     <div id="blocklyDiv" style="height: 480px; width: 600px;">
       <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-        <!-- Logica -->
+         <!-- Logica 
         <category name="Logica" colour="210">
           <block type="controls_if"></block>
           <block type="logic_compare"></block>
@@ -97,7 +99,7 @@
           <block type="logic_ternary"></block>
         </category>
 
-        <!-- Loops -->
+         Loops 
         <category name="Loops" colour="%{BKY_LOOPS_HUE}">
           <block type="controls_repeat_ext">
             <value name="TIMES">
@@ -129,7 +131,7 @@
           <block type="controls_flow_statements"></block>
         </category>
 
-        <!-- Matematicas -->
+        Matematicas 
         <category name="Matematicas" colour="230">
           <block type="math_number">
             <field name="NUM">123</field>
@@ -170,14 +172,14 @@
           <block type="math_atan2"></block>
         </category>
 
-        <!-- Texto -->
+         Texto 
         <category name="Texto" colour="150">
           <block type="text"></block>
           <block type="text_print"></block>
           <block type="text_length"></block>
         </category>
 
-        <!-- Listas -->
+         Listas 
         <category name="Listas"colour="%{BKY_VARIABLES_HUE}">
           <block type="lists_create_empty"></block>
           <block type="lists_create_with"></block>
@@ -227,14 +229,14 @@
           </block>
         </category>
 
-        <!-- Variables y funciones -->
+         Variables y funciones 
         <sep></sep>
         <category name="Variables" custom="VARIABLE" colour="%{BKY_VARIABLES_HUE}">
         </category>
         <category name="Functions" custom="PROCEDURE" colour="%{BKY_PROCEDURES_HUE}">
         </category>
 
-        <!-- Colores -->
+       Colores 
         <sep></sep>
         <category name="Colour">
           <block type="colour_picker"></block>
@@ -275,7 +277,7 @@
           </block>
         </category>
 
-        <!-- Ejemplos -->
+         Ejemplos 
         <sep></sep>
         <category name="Library" expanded="true">
           <category name="Randomize">
@@ -476,8 +478,31 @@
             </block>
           </category>
         </category>
+         -->
         <category name="Arduino">
         <div class="blocklyToolboxDiv" dir="LTR" style="left: 0px; height: 263px;"><div class="blocklyTreeRoot" id=":0" role="tree" aria-selected="false" aria-expanded="false" aria-level="0" aria-labelledby=":0.label" hidefocus="true" tabindex="0"><div class="blocklyTreeRow blocklyHidden" style="padding-left:0px;"><span style="display:inline-block;" class="" role="presentation"></span><span class="blocklyTreeLabel" id=":0.label"></span><span></span></div><div style="background-position:-100px 0;" role="group"><div class="" id=":1" role="treeitem" aria-selected="false" aria-expanded="false" aria-level="1" aria-labelledby=":1.label" aria-setsize="7" aria-posinset="1"><div class="blocklyTreeRow" style="padding-left: 0px; border-left: 8px solid rgb(255, 171, 25);"><span role="presentation"></span><span style="display:inline-block;" class="blocklyTreeIcon blocklyTreeIconNone" role="presentation"></span><span class="blocklyTreeLabel" id=":1.label">Logic</span><span></span></div><div style="background-position:0px 0;display:none;" role="group"></div></div><div class="" id=":2" role="treeitem" aria-selected="false" aria-expanded="false" aria-level="1" aria-labelledby=":2.label" aria-setsize="7" aria-posinset="2"><div class="blocklyTreeRow" style="padding-left: 0px; border-left: 8px solid rgb(255, 213, 0);"><span role="presentation"></span><span style="display:inline-block;" class="blocklyTreeIcon blocklyTreeIconNone" role="presentation"></span><span class="blocklyTreeLabel" id=":2.label">Loops</span><span></span></div><div style="background-position:0px 0;display:none;" role="group"></div></div><div class="" id=":3" role="treeitem" aria-selected="false" aria-expanded="false" aria-level="1" aria-labelledby=":3.label" aria-setsize="7" aria-posinset="3"><div class="blocklyTreeRow" style="padding-left: 0px; border-left: 8px solid rgb(64, 191, 74);"><span role="presentation"></span><span style="display:inline-block;" class="blocklyTreeIcon blocklyTreeIconNone" role="presentation"></span><span class="blocklyTreeLabel" id=":3.label">Math</span><span></span></div><div style="background-position:0px 0;display:none;" role="group"></div></div><div class="" id=":4" role="treeitem" aria-selected="false" aria-expanded="false" aria-level="1" aria-labelledby=":4.label" aria-setsize="7" aria-posinset="4"><div class="blocklyTreeRow" style="padding-left: 0px; border-left: 8px solid rgb(76, 191, 230);"><span role="presentation"></span><span style="display:inline-block;" class="blocklyTreeIcon blocklyTreeIconNone" role="presentation"></span><span class="blocklyTreeLabel" id=":4.label">Array</span><span></span></div><div style="background-position:0px 0;display:none;" role="group"></div></div><div class="" id=":5" role="treeitem" aria-selected="false" aria-expanded="false" aria-level="1" aria-labelledby=":5.label" aria-setsize="7" aria-posinset="5"><div class="blocklyTreeRow" style="padding-left: 0px; border-left: 8px solid rgb(153, 102, 255);"><span role="presentation"></span><span style="display:inline-block;" class="blocklyTreeIcon blocklyTreeIconNone" role="presentation"></span><span class="blocklyTreeLabel" id=":5.label">Text</span><span></span></div><div style="background-position:0px 0;display:none;" role="group"></div></div><div class="" id=":6" role="treeitem" aria-selected="false" aria-expanded="false" aria-level="1" aria-labelledby=":6.label" aria-setsize="7" aria-posinset="6"><div class="blocklyTreeRow" style="padding-left: 0px; border-left: 8px solid rgb(255, 140, 26);"><span role="presentation"></span><span style="display:inline-block;" class="blocklyTreeIcon blocklyTreeIconNone" role="presentation"></span><span class="blocklyTreeLabel" id=":6.label">Variables</span><span></span></div><div style="background-position:0px 0;display:none;" role="group"></div></div><div class="" id=":7" role="treeitem" aria-selected="false" aria-expanded="false" aria-level="1" aria-labelledby=":7.label" aria-setsize="7" aria-posinset="7"><div class="blocklyTreeRow" style="padding-left: 0px; border-left: 8px solid rgb(255, 102, 128);"><span role="presentation"></span><span style="display:inline-block;" class="blocklyTreeIcon blocklyTreeIconNone" role="presentation"></span><span class="blocklyTreeLabel" id=":7.label">Functions</span><span></span></div><div style="background-position:-100px 0;display:none;" role="group"></div></div></div></div></div>
+        <g class="blocklyFlyout" transform="translate(178,0)" style="display: block;"><path class="blocklyFlyoutBackground" d="M 0,0 h 178.59266662597656 a 8 8 0 0 1 8 8 v 124 a 8 8 0 0 1 -8 8 h -178.59266662597656 z"></path><g class="blocklyWorkspace"><g class="blocklyBlockCanvas" transform="translate(0,2) scale(1)"><rect fill-opacity="0" width="66.30636596679688" height="63" x="16" y="8"></rect><rect fill-opacity="0" width="151.59266662597656" height="88" x="16" y="95"></rect><rect fill-opacity="0" width="113.88189697265625" height="36" x="8" y="207"></rect><g class="blocklyDraggable" transform="translate(16,207)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#cc8914" d="m 0,0 H 20 H 105.88189697265625 v 35 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z
+          M 30.5,5 h -14.5 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 6 h 14.5 z M 95.88189697265625,5 h -14.5 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 6 h 14.5 z"></path><path class="blocklyPath" fill="#FFAB19" d="m 0,0 H 20 H 105.88189697265625 v 35 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z
+          M 30.5,5 h -14.5 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 6 h 14.5 z M 95.88189697265625,5 h -14.5 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 6 h 14.5 z"></path><path class="blocklyPathLight" stroke="#ffc45e" d="m 0.5,0.5 H 19.5 M 19.5,0.5 H 105.38189697265625 M 0.5,34.5 V 18.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 H 1
+          M 31,5.5 v 26 h -14.5 M 10.9,24.3 l 3.68,-2.1 M 96.38189697265625,5.5 v 26 h -14.5 M 76.28189697265626,24.3 l 3.68,-2.1"></path><g class="blocklyEditableText" transform="translate(40.5,10)" style="cursor: default;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="34.88189697265625"></rect><text class="blocklyText" y="12.5">=<tspan style="fill: rgb(255, 171, 25);"> ▾</tspan></text></g></g><rect fill-opacity="0" width="129.78024291992188" height="36" x="8" y="267"></rect><g class="blocklyDraggable" transform="translate(16,267)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#cc8914" d="m 0,0 H 20 H 121.78024291992188 v 35 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z
+          M 30.5,5 h -14.5 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 6 h 14.5 z M 111.78024291992188,5 h -14.5 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 6 h 14.5 z"></path><path class="blocklyPath" fill="#FFAB19" d="m 0,0 H 20 H 121.78024291992188 v 35 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z
+          M 30.5,5 h -14.5 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 6 h 14.5 z M 111.78024291992188,5 h -14.5 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 6 h 14.5 z"></path><path class="blocklyPathLight" stroke="#ffc45e" d="m 0.5,0.5 H 19.5 M 19.5,0.5 H 121.28024291992188 M 0.5,34.5 V 18.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 H 1
+          M 31,5.5 v 26 h -14.5 M 10.9,24.3 l 3.68,-2.1 M 112.28024291992188,5.5 v 26 h -14.5 M 92.18024291992188,24.3 l 3.68,-2.1"></path><g class="blocklyEditableText" transform="translate(40.5,10)" style="cursor: default;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="50.780242919921875"></rect><text class="blocklyText" y="12.5">and<tspan style="fill: rgb(255, 171, 25);"> ▾</tspan></text></g></g><rect fill-opacity="0" width="56.37937927246094" height="25" x="8" y="327"></rect><g class="blocklyDraggable" transform="translate(16,327)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#cc8914" d="m 0,0 H 48.37937927246094 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 4 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z
+          "></path><path class="blocklyPath" fill="#FFAB19" d="m 0,0 H 48.37937927246094 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 4 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z
+          "></path><path class="blocklyPathLight" stroke="#ffc45e" d="m 0.5,0.5 H 47.87937927246094 M 47.87937927246094,0.5 M 43.37937927246094,19.3 l 3.68,-2.1 M 0.5,23.5 V 18.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 H 1
+          "></path><text class="blocklyText" y="12.5" transform="translate(10,5)">not</text></g><rect fill-opacity="0" width="69.58195495605469" height="26" x="8" y="376"></rect><g class="blocklyDraggable" transform="translate(16,376)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#cc8914" d="m 0,0 H 61.58195495605469 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z
+          "></path><path class="blocklyPath" fill="#FFAB19" d="m 0,0 H 61.58195495605469 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z
+          "></path><path class="blocklyPathLight" stroke="#ffc45e" d="m 0.5,0.5 H 61.08195495605469 M 61.08195495605469,0.5 M 0.5,24.5 V 18.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 H 1
+          "></path><g class="blocklyEditableText" transform="translate(10,5)" style="cursor: default;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="51.58195495605469"></rect><text class="blocklyText" y="12.5">true<tspan style="fill: rgb(255, 171, 25);"> ▾</tspan></text></g></g><rect fill-opacity="0" width="50.8203125" height="25" x="8" y="426"></rect><g class="blocklyDraggable" transform="translate(16,426)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#cc8914" d="m 0,0 H 42.8203125 v 24 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z
+          "></path><path class="blocklyPath" fill="#FFAB19" d="m 0,0 H 42.8203125 v 24 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z
+          "></path><path class="blocklyPathLight" stroke="#ffc45e" d="m 0.5,0.5 H 42.3203125 M 42.3203125,0.5 M 0.5,23.5 V 18.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 H 1
+          "></path><text class="blocklyText" y="12.5" transform="translate(10,5)">null</text></g><g class="blocklyDraggable" transform="translate(16,8)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#cc8914" d="m 0,8 A 8,8 0 0,1 8,0 H 15 l 6,4 3,0 6,-4 H 66.30636596679688 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 4 H 66.30636596679688 l -6,4 -3,0 -6,-4 h -7 a 8,8 0 0,0 -8,8 v 8 a 8,8 0 0,0 8,8 H 66.30636596679688 v 10 H 29.5 l -6,4 -3,0 -6,-4 H 8 a 8,8 0 0,1 -8,-8 z
+          "></path><path class="blocklyPath" fill="#FFAB19" d="m 0,8 A 8,8 0 0,1 8,0 H 15 l 6,4 3,0 6,-4 H 66.30636596679688 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 4 H 66.30636596679688 l -6,4 -3,0 -6,-4 h -7 a 8,8 0 0,0 -8,8 v 8 a 8,8 0 0,0 8,8 H 66.30636596679688 v 10 H 29.5 l -6,4 -3,0 -6,-4 H 8 a 8,8 0 0,1 -8,-8 z
+          "></path><path class="blocklyPathLight" stroke="#ffc45e" d="m 0.5,7.5 A 7.5,7.5 0 0,1 8,0.5 H 15 l 6,4 3,0 6,-4 H 65.80636596679688 M 65.80636596679688,0.5 M 61.306365966796875,19.3 l 3.68,-2.1 M 65.80636596679688,24.5 M 38.29595832671122,46.01040764008565 a 8.5,8.5 0 0,0 6.0104076400856545,2.4895923599143455 H 65.80636596679688 M 2.6966991411008934,55.30330085889911 A 7.5,7.5 0 0,1 0.5,50 V 8
+          "></path><g class="blocklyIconGroup blocklyIconGroupReadonly" display="block" transform="translate(10,5)"><rect class="blocklyIconShape" rx="4" ry="4" height="16" width="16"></rect><path class="blocklyIconSymbol" d="m4.203,7.296 0,1.368 -0.92,0.677 -0.11,0.41 0.9,1.559 0.41,0.11 1.043,-0.457 1.187,0.683 0.127,1.134 0.3,0.3 1.8,0 0.3,-0.299 0.127,-1.138 1.185,-0.682 1.046,0.458 0.409,-0.11 0.9,-1.559 -0.11,-0.41 -0.92,-0.677 0,-1.366 0.92,-0.677 0.11,-0.41 -0.9,-1.559 -0.409,-0.109 -1.046,0.458 -1.185,-0.682 -0.127,-1.138 -0.3,-0.299 -1.8,0 -0.3,0.3 -0.126,1.135 -1.187,0.682 -1.043,-0.457 -0.41,0.11 -0.899,1.559 0.108,0.409z"></path><circle class="blocklyIconShape" r="2.7" cx="8" cy="8"></circle></g><text class="blocklyText" y="12.5" transform="translate(37,5)">if</text><text class="blocklyText" y="12.5" transform="translate(10,29)">do</text></g><g class="blocklyDraggable" transform="translate(16,95)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#cc8914" d="m 0,8 A 8,8 0 0,1 8,0 H 15 l 6,4 3,0 6,-4 H 151.59266662597656 v 25 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 4 H 66.30636596679688 l -6,4 -3,0 -6,-4 h -7 a 8,8 0 0,0 -8,8 v 8 a 8,8 0 0,0 8,8 H 151.59266662597656 v 10 H 29.5 l -6,4 -3,0 -6,-4 H 8 a 8,8 0 0,1 -8,-8 z
+          "></path><path class="blocklyPath" fill="#FFAB19" d="m 0,8 A 8,8 0 0,1 8,0 H 15 l 6,4 3,0 6,-4 H 151.59266662597656 v 25 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 4 H 66.30636596679688 l -6,4 -3,0 -6,-4 h -7 a 8,8 0 0,0 -8,8 v 8 a 8,8 0 0,0 8,8 H 151.59266662597656 v 10 H 29.5 l -6,4 -3,0 -6,-4 H 8 a 8,8 0 0,1 -8,-8 z
+          "></path><path class="blocklyPathLight" stroke="#ffc45e" d="m 0.5,7.5 A 7.5,7.5 0 0,1 8,0.5 H 15 l 6,4 3,0 6,-4 H 151.09266662597656 M 151.09266662597656,0.5 M 151.09266662597656,25.5 M 146.59266662597656,44.3 l 3.68,-2.1 M 151.09266662597656,49.5 M 38.29595832671122,71.01040764008566 a 8.5,8.5 0 0,0 6.0104076400856545,2.4895923599143455 H 151.09266662597656 M 2.6966991411008934,80.3033008588991 A 7.5,7.5 0 0,1 0.5,75 V 8
+          "></path><g class="blocklyIconGroup blocklyIconGroupReadonly" display="block" transform="translate(10,5)"><rect class="blocklyIconShape" rx="4" ry="4" height="16" width="16"></rect><path class="blocklyIconSymbol" d="m4.203,7.296 0,1.368 -0.92,0.677 -0.11,0.41 0.9,1.559 0.41,0.11 1.043,-0.457 1.187,0.683 0.127,1.134 0.3,0.3 1.8,0 0.3,-0.299 0.127,-1.138 1.185,-0.682 1.046,0.458 0.409,-0.11 0.9,-1.559 -0.11,-0.41 -0.92,-0.677 0,-1.366 0.92,-0.677 0.11,-0.41 -0.9,-1.559 -0.409,-0.109 -1.046,0.458 -1.185,-0.682 -0.127,-1.138 -0.3,-0.299 -1.8,0 -0.3,0.3 -0.126,1.135 -1.187,0.682 -1.043,-0.457 -0.41,0.11 -0.899,1.559 0.108,0.409z"></path><circle class="blocklyIconShape" r="2.7" cx="8" cy="8"></circle></g><text class="blocklyText" y="12.5" transform="translate(37,5)">Switch&nbsp;(</text><g class="blocklyEditableText" transform="translate(99.13311767578125,5)" style="cursor: default;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="29.577667236328125"></rect><text class="blocklyText" y="12.5">i<tspan style="fill: rgb(255, 171, 25);"> ▾</tspan></text></g><text class="blocklyText" y="12.5" transform="translate(128.71078491210938,5)">)</text><text class="blocklyText" y="12.5" transform="translate(102.62632751464844,30)">case</text><text class="blocklyText" y="12.5" transform="translate(10,54)">do</text></g></g><g class="blocklyBubbleCanvas" transform="translate(0,2) scale(1)"></g><g class="blocklyScrollbarVertical" transform="translate(169.09266662597656,2.5)" display="block"><rect class="blocklyScrollbarBackground" width="15" height="135"></rect><rect class="blocklyScrollbarHandle" rx="5" ry="5" width="10" x="2.5" height="40" y="0"></rect></g></g></g>
         </category>  
       </xml>
     </div>
