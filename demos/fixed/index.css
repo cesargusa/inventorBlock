@@ -53,6 +53,7 @@ p{
 #blocklyDiv {
     background-color: #ff0039;
     margin-left: 3%;
+    height:0%
 }
 .blocklyWorkspace{
     margin-left: 3%;
